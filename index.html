@@ -5,39 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نظام إدارة المخزون - تسجيل الدخول</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> 
 </head>
 <body>
     <div class="container">
         <h1>نظام إدارة المخزون</h1>
-        <h2>صفحة تسجيل الدخول</h2>
+        <h2>تسجيل الدخول</h2>
 
-        <div class="login-section admin-login">
-            <h3>تسجيل دخول المسؤول/أمين المخزن</h3>
-            <form action="#" method="POST">
-                <input type="text" id="admin-username" name="username" placeholder="اسم المستخدم" required>
-                <input type="password" id="admin-password" name="password" placeholder="كلمة المرور" required>
-                <button type="submit">دخول المسؤول/المخزن</button>
-            </form>
+        <div id="main-selection" class="selection-menu">
+            <button onclick="showLogin('employee')">تسجيل دخول الموظفين</button>
+            <button onclick="showLogin('admin')">تسجيل دخول المسؤول/أمين المخزن</button>
         </div>
 
-        <hr>
-
-        <div class="login-section employee-login">
-            <h3>تسجيل دخول الموظفين العاديين</h3>
-            <form action="#" method="POST">
+        <div id="employee-panel" class="login-section hidden">
+            <h3>تسجيل دخول الموظفين</h3>
+            <form id="employee-form" action="#" method="POST">
                 <input type="text" id="employee-username" name="username" placeholder="اسم المستخدم/رقم الموظف" required>
                 <input type="password" id="employee-password" name="password" placeholder="كلمة المرور" required>
                 <button type="submit">دخول الموظف</button>
             </form>
-            
-            <div class="employee-links">
-                <h4>بعد الدخول سيتمكن الموظف من:</h4>
-                <ul>
-                    <li><a href="request-form.html">1. طلب صرف</a></li>
-                    <li><a href="consumption-form.html">2. تسجيل استهلاك</a></li>
-                    <li><a href="return-form.html">3. طلب ارتجاع</a></li>
-                </ul>
-            </div>
+            <button onclick="showLogin('main')" class="back-button">العودة للخلف</button>
+        </div>
+
+        <div id="admin-panel" class="login-section hidden">
+            <h3>تسجيل دخول المسؤول/أمين المخزن</h3>
+            <form id="admin-form" action="#" method="POST">
+                <input type="text" id="admin-username" name="username" placeholder="اسم المستخدم" required>
+                <input type="password" id="admin-password" name="password" placeholder="كلمة المرور" required>
+                <button type="submit">دخول المسؤول/المخزن</button>
+            </form>
+            <button onclick="showLogin('main')" class="back-button">العودة للخلف</button>
         </div>
     </div>
 </body>

@@ -1,0 +1,138 @@
+/* الأسلوب الجديد: تصميم نظيف واحترافي */
+:root {
+    --primary-color: #007BFF; /* أزرق مؤسسي */
+    --secondary-color: #28A745; /* أخضر للدخول */
+    --background-color: #f8f9fa; /* خلفية فاتحة */
+    --card-background: #ffffff; /* خلفية البطاقة */
+    --text-color: #343a40;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    direction: rtl; 
+    text-align: right;
+}
+
+.container {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 90%;
+    max-width: 450px; /* جعل الحاوية أصغر وأكثر تركيزاً */
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+h2 {
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* -------------------
+   تصميم لوحة الاختيار الرئيسية
+   ------------------- */
+.selection-menu button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.selection-menu button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* تأثير بسيط عند المرور */
+}
+
+/* -------------------
+   تصميم لوحات تسجيل الدخول
+   ------------------- */
+.login-section {
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    background-color: #f1f3f5;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px;
+    margin: 15px 0 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+
+/* زر العودة للخلف */
+.back-button {
+    width: 100%;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+/* الكلاس الخاص بالإخفاء - لا يزال ضرورياً */
+.hidden {
+    display: none !important;
+}
