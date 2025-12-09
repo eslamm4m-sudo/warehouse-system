@@ -1,91 +1,149 @@
-/* تنسيق عام للصفحة باللغة العربية */
+:root {
+    --primary-color: #007BFF; /* أزرق */
+    --secondary-color: #28A745; /* أخضر */
+    --background-color: #f8f9fa; 
+    --text-color: #343a40;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    direction: rtl; /* اتجاه النص من اليمين لليسار */
+    direction: rtl; 
     text-align: right;
 }
 
-.container {
-    background: #fff;
+.main-screen {
+    background: white;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
     width: 90%;
-    max-width: 500px;
+    max-width: 800px; /* ليتسع للتصميم الدائري */
+    text-align: center;
 }
 
-h1, h2, h3, h4 {
-    color: #0056b3;
-    text-align: center;
+h1 {
+    color: var(--primary-color);
     margin-bottom: 20px;
+    font-size: 32px;
 }
+
+/* -------------------
+   تصميم الواجهة الدائرية (الجديد)
+   ------------------- */
+
+.circular-container {
+    /* هنا ضع اسم ملف الصورة الذي قمت بتنزيله */
+    background-image: url('circular-template.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    padding-bottom: 70%; /* نسبة للحفاظ على شكل دائري أو شبه دائري */
+    position: relative; /* مهم لوضع الأزرار داخلها */
+    margin: 20px auto;
+}
+
+.selection-menu {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.selection-menu button {
+    position: absolute; /* لوضع الأزرار في مكان محدد */
+    width: 160px; /* عرض الأزرار */
+    padding: 15px 10px;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+/* تحديد أماكن وتنسيقات زر الأقسام */
+.department-btn {
+    background-color: #009688; /* لون أخضر داكن */
+    top: 40%; /* الارتفاع من الأعلى */
+    right: 20%; /* البعد من اليمين (على يمين الدائرة) */
+    transform: translateY(-50%);
+}
+.department-btn:hover {
+    background-color: #00796b;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* تحديد أماكن وتنسيقات زر أمين المخزن */
+.admin-btn {
+    background-color: #3f51b5; /* لون أزرق بنفسجي */
+    top: 40%; /* الارتفاع من الأعلى */
+    left: 20%; /* البعد من اليسار (على يسار الدائرة) */
+    transform: translateY(-50%);
+}
+.admin-btn:hover {
+    background-color: #303f9f;
+    transform: translateY(-50%) scale(1.05);
+}
+
+
+/* -------------------
+   تصميم لوحات تسجيل الدخول (تبقى كما هي)
+   ------------------- */
 
 .login-section {
     padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    margin-top: 40px;
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    background-color: #f1f3f5;
+    text-align: center;
 }
-
 input[type="text"], input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 16px;
 }
-
 button[type="submit"] {
     width: 100%;
-    background-color: #5cb85c;
+    background-color: var(--secondary-color);
     color: white;
-    padding: 10px 15px;
-    margin: 10px 0;
+    padding: 12px;
+    margin: 15px 0 10px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
 }
-
 button[type="submit"]:hover {
-    background-color: #4cae4c;
+    background-color: #1e7e34;
 }
-
-hr {
-    border: 0;
-    border-top: 1px solid #eee;
-    margin: 25px 0;
-}
-
-.employee-links ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.employee-links li {
-    background-color: #eee;
-    margin-top: 5px;
+.back-button {
+    width: 100%;
+    background-color: #6c757d;
+    color: white;
     padding: 10px;
+    margin-top: 10px;
+    border: none;
     border-radius: 4px;
+    cursor: pointer;
 }
-
-.employee-links a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    display: block; /* لجعل الرابط يملأ مساحة العنصر */
-}
-
-.employee-links a:hover {
-    color: #0056b3;
+.hidden {
+    display: none !important;
 }

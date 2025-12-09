@@ -5,40 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نظام إدارة المخزون - تسجيل الدخول</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> 
+    
+    <script src="script.js" defer></script> 
 </head>
 <body>
-    <div class="container">
+    <div class="main-screen">
         <h1>نظام إدارة المخزون</h1>
-        <h2>صفحة تسجيل الدخول</h2>
-
-        <div class="login-section admin-login">
-            <h3>تسجيل دخول المسؤول/أمين المخزن</h3>
-            <form action="#" method="POST">
-                <input type="text" id="admin-username" name="username" placeholder="اسم المستخدم" required>
-                <input type="password" id="admin-password" name="password" placeholder="كلمة المرور" required>
-                <button type="submit">دخول المسؤول/المخزن</button>
-            </form>
+        
+        <div class="circular-container">
+            
+            <div id="main-selection" class="selection-menu">
+                
+                <button class="department-btn" onclick="showLogin('employee')">
+                    تسجيل دخول الأقسام
+                </button>
+                
+                <button class="admin-btn" onclick="showLogin('admin')">
+                    تسجيل دخول أمين المخزن
+                </button>
+                
+            </div>
+            
         </div>
-
-        <hr>
-
-        <div class="login-section employee-login">
-            <h3>تسجيل دخول الموظفين العاديين</h3>
-            <form action="#" method="POST">
+        
+        <div id="employee-panel" class="login-section hidden">
+            <h3>تسجيل دخول الأقسام والموظفين</h3>
+            <form id="employee-form" action="#" method="POST">
                 <input type="text" id="employee-username" name="username" placeholder="اسم المستخدم/رقم الموظف" required>
                 <input type="password" id="employee-password" name="password" placeholder="كلمة المرور" required>
-                <button type="submit">دخول الموظف</button>
+                <button type="submit">دخول الأقسام</button>
             </form>
-            
-            <div class="employee-links">
-                <h4>بعد الدخول سيتمكن الموظف من:</h4>
-                <ul>
-                    <li><a href="request-form.html">1. طلب صرف</a></li>
-                    <li><a href="consumption-form.html">2. تسجيل استهلاك</a></li>
-                    <li><a href="return-form.html">3. طلب ارتجاع</a></li>
-                </ul>
-            </div>
+            <button onclick="showLogin('main')" class="back-button">العودة للواجهة الرئيسية</button>
         </div>
+
+        <div id="admin-panel" class="login-section hidden">
+            <h3>تسجيل دخول أمين المخزن</h3>
+            <form id="admin-form" action="#" method="POST">
+                <input type="text" id="admin-username" name="username" placeholder="اسم المستخدم" required>
+                <input type="password" id="admin-password" name="password" placeholder="كلمة المرور" required>
+                <button type="submit">دخول أمين المخزن</button>
+            </form>
+            <button onclick="showLogin('main')" class="back-button">العودة للواجهة الرئيسية</button>
+        </div>
+        
     </div>
 </body>
 </html>
